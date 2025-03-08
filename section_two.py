@@ -39,4 +39,51 @@ print("Selection Sorted:", sorted_selection)
 # Recursively split the list into halves then sort and merge
 
 def merge_sort(arr_merge):
-    pass
+    if len(arr_merge) > 1:
+        mid = len(arr_merge) // 2
+        left_half = arr_merge[:mid]
+        right_half = arr_merge[mid:]
+
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        i = j = k = 0
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr_merge[k] = left_half[i]
+                i += 1
+            else:
+                arr_merge[k] = right_half[j]
+                j += 1
+            k += 1
+
+        while i < len(left_half):
+            arr_merge[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr_merge[k] = right_half[j]
+            j += 1
+            k += 1
+    return arr_merge
+
+arr_merge = [38, 27, 43, 3, 9, 82, 10]
+sorted_merge = merge_sort(arr_merge)
+print("Merge Sort:", sorted_merge)
+
+# Quick Sort Algorithm
+# Start from a pivot, partition elements and recursively sort
+
+def quick_sort(arr_quick):
+    if len(arr_quick) <= 1:
+        return arr_quick
+    pivot = arr_quick[len(arr_quick) // 2]
+    left = [x for x in arr_quick if x < pivot]
+    middle = [x for x in arr_quick if x == pivot]
+    right = [x for x in arr_quick if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+arr_quick = [33, 10, 55, 71, 29, 3]
+sorted_quick = quick_sort(arr_quick)
+print("Quick Sort:", sorted_quick)
