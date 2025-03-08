@@ -1,1 +1,1 @@
-- What are Algorithms and Data Structures?
+- Different types of Algorithms
