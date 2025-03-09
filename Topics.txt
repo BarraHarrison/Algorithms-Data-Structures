@@ -1,3 +1,4 @@
 - Different types of Algorithms
 - Searching Algorithms (section_one)
 - Sorting Algorithms (section_two)
+- Recursion & Divide-Conquer Algorithms (section_three)
