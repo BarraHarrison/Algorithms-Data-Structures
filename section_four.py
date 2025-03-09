@@ -81,3 +81,36 @@ print("Fractional Knapsack (Greedy):", result_knapsack)
 # Huffman Coding (File Compression)
 # Variable length codes based on frequency of characters
 
+class HuffmanNode:
+    def __init__(self, char, freq):
+        self.char = char
+        self.freq = freq
+        self.left = None
+        self.right = None
+
+    def __lt__(self, other):
+        return self.freq < other.freq
+    
+def huffman_coding_function(frequencies_huffman):
+    heap = [HuffmanNode(char, freq) for char, freq in frequencies_huffman.items()]
+    heapq.heapify(heap)
+
+    while len(heap) > 1:
+        left = heapq.heappop(heap)
+        right = heapq.heappop(heap)
+        new_node = HuffmanNode(None, left.freq + right.freq)
+        new_node.left = left
+        new_node.right = right
+        heapq.heappush(heap, new_node)
+
+    def build_codes(node, code="", mapping={}):
+        if node:
+            if node.char is not None:
+                mapping[node.char] = code
+            build_codes(node.left, code + "0", mapping)
+            build_codes(node.right, code + "1", mapping)
+        return mapping
+
+frequencies_huffman = {"a": 5, "b": 9, "c": 12, "d": 13, "e": 16, "f": 45}
+result_huffman = huffman_coding_function(frequencies_huffman)
+print("Huffman Coding (Greedy):", result_huffman)
