@@ -2,3 +2,4 @@
 - Searching Algorithms (section_one)
 - Sorting Algorithms (section_two)
 - Recursion & Divide-Conquer Algorithms (section_three)
+- Greedy Algorithms (section_four)
