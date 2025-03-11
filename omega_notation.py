@@ -42,3 +42,24 @@ def measure_time(func, n):
     func(n)
     return time.time() - start
 
+input_sizes = np.array([2, 4, 8, 16, 32, 64, 128])
+
+times = {
+    "Ω(1)": [measure_time(best_case_constant, n) for n in input_sizes],
+    "Ω(log n)": [measure_time(best_case_logarithmic, n) for n in input_sizes],
+    "Ω(1) (Best Case Search)": [measure_time(best_case_linear, n) for n in input_sizes],
+    "Ω(n log n)": [measure_time(best_case_nlogn, n) for n in input_sizes],
+    "Ω(n^2)": [measure_time(best_case_quadratic, n) for n in input_sizes],
+}
+
+plt.figure(figsize=(10, 6))
+for label, values in times.items():
+    plt.plot(input_sizes, values, label=label, marker="o")
+
+plt.yscale("log")
+plt.xlabel("Input Size (n)")
+plt.ylabel("Execution Time (seconds)")
+plt.title("Omega Ω) Complexity Growth - Best Case Scenarios")
+plt.legend()
+plt.grid(True)
+plt.show()
