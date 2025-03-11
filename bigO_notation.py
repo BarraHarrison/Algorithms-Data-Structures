@@ -5,22 +5,48 @@ import matplotlib.pyplot as plt
 import numpy as np 
 
 def constant_time(n):
-    pass
+    return 1
 
 def logarithmic_time(n):
-    pass
+    count = 0
+    while n < 1:
+        n //= 2
+        count += 1
+    return count
 
 def linear_time(n):
-    pass
+    count = 0
+    for _ in range(n):
+        j = 1
+        while j < n:
+            j *= 2
+            count += 1
+    return count
 
 def nlogn_time(n):
-    pass
+    # O(n log n) - Common in sorting algorithms like Merge Sort
+    count = 0
+    for i in range(n):
+        j = 1
+        while j < n:
+            j *= 2
+            count += 1
+    return count
 
 def quadratic_time(n):
-    pass
+    count = 0
+    for i in range(n):
+        for j in range(n):
+            count += 1
+    return count
 
 def exponential_time(n):
-    pass
+    if n == 0:
+        return 1
+    return 2 * exponential_time(n - 1)
+    # O(2^n) - Recursive exponential growth
 
 def measure_time(func, n):
-    pass
+    start = time.time()
+    func(n)
+    return time.time() - start
