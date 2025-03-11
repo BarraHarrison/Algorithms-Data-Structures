@@ -59,7 +59,7 @@ for label, values in times.items():
 plt.yscale("log")
 plt.xlabel("Input Size (n)")
 plt.ylabel("Execution Time (seconds)")
-plt.title("Omega Ω) Complexity Growth - Best Case Scenarios")
+plt.title("Omega (Ω) Complexity Growth - Best Case Scenarios")
 plt.legend()
 plt.grid(True)
 plt.show()
