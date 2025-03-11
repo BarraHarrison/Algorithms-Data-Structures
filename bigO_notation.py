@@ -63,6 +63,7 @@ times = {
     "0(2^n)": [measure_time(exponential_time, n) for n in input_sizes if n <= 20],
 }
 
+# The graph shows how different algorithms grow as input size (n) increases
 plt.figure(figsize=(10, 6))
 for label, values in times.items():
     plt.plot(input_sizes[:len(values)], values, label=label, marker="o")
