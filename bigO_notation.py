@@ -50,3 +50,27 @@ def measure_time(func, n):
     start = time.time()
     func(n)
     return time.time() - start
+
+input_sizes = np.array([2, 4, 8, 16, 32, 64, 128])
+
+# Measure time of each function
+times = {
+    "0(1)": [measure_time(constant_time, n) for n in input_sizes],
+    "0(log n)": [measure_time(logarithmic_time, n) for n in input_sizes],
+    "0(n)": [measure_time(linear_time, n) for n in input_sizes],
+    "0(n log n)": [measure_time(nlogn_time, n) for n in input_sizes],
+    "0(n^2)": [measure_time(quadratic_time, n) for n in input_sizes],
+    "0(2^n)": [measure_time(exponential_time, n) for n in input_sizes if n <= 20],
+}
+
+plt.figure(figsize=(10, 6))
+for label, values in times.items():
+    plt.plot(input_sizes[:len(values)], values, label=label, marker="o")
+
+plt.yscale("log")
+plt.xlabel("Input Size (n)")
+plt.ylabel("Execution Time (seconds)")
+plt.title("Big-O Complexity Growth")
+plt.legend
+plt.grid(True)
+plt.show()
