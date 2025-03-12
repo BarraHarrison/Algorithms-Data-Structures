@@ -1,6 +1,18 @@
 - Different types of Algorithms
+
 - Searching Algorithms (section_one)
+-> Linear-Search, Binary-Search
+
 - Sorting Algorithms (section_two)
+-> Bubble-Sort, Selection-Sorting, Merge-Sort, Quick-Sort
+
 - Recursion & Divide-Conquer Algorithms (section_three)
+-> Factorial-Calculation, Fibonacci-Sequence, Tower-of-Hanoi
+-> MergeSort-Recursive, QuickSort-Recursive
+
 - Greedy Algorithms (section_four)
+-> Coin-Change, Activity-Problem, Fractional-Knapsack-Problem, Huffman-Coding
+
 - Dynamic Programming Algorithms (section_five)
+-> FibonacciSequence-Memoization & Tabulation
+-> 0/1 Knapsack-Problem, LCS, Levenshtein-Distance
