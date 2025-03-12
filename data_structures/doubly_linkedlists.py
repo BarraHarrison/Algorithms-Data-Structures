@@ -50,5 +50,24 @@ class DoublyLinkedList:
 
         temp = None
 
-    def display_forward():
-        pass
+    def display_forward(self):
+        """Print all the nodes from the head to the tail."""
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ⇄ ")
+            temp = temp.next
+        print("None")
+
+
+    def display_backward(self):
+        """Print all the nodes from the tail to the head."""
+        temp = self.head
+        if not temp:
+            return
+        while temp.next:
+            temp = temp.next
+
+        while temp:
+            print(temp.data, end=" ⇄ ")
+            temp = temp.prev
+        print("None")
