@@ -71,3 +71,18 @@ class DoublyLinkedList:
             print(temp.data, end=" ⇄ ")
             temp = temp.prev
         print("None")
+
+
+dll = DoublyLinkedList()
+dll.insert_at_end(10)
+dll.insert_at_end(20)
+dll.insert_at_end(30)
+dll.display_forward()
+
+dll.delete_node(20)
+dll.display_forward()
+dll.display_backward()
+
+# 10 ⇄ 20 ⇄ 30 ⇄ None
+# 10 ⇄ 30 ⇄ None
+# 30 ⇄ 10 ⇄ None
