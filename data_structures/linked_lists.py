@@ -53,3 +53,14 @@ class SinglyLinkedList:
         print("None")
 
 
+sll = SinglyLinkedList()
+sll.insert_at_end(10)
+sll.insert_at_end(20)
+sll.insert_at_end(30)
+sll.display()
+
+sll.delete_node(20)
+sll.display()
+
+# 10 → 20 → 30 → None
+# 10 → 30 → None
