@@ -4,6 +4,7 @@
 
 # Heapify-Up: New insert placed at the bottom of the tree, works its way "up"
 # Heapify-Down: Replace the root with the last element
+import random
 
 class MinHeap:
     def __init__(self):
@@ -47,3 +48,32 @@ class MinHeap:
     def peek(self):
         """Get the smallest value without removing it"""
         return self.heap[0] if self.heap else None
+
+# Task Scheduling Example     
+heap = MinHeap()
+tasks = [
+    "Process Data",
+    "Train AI Model",
+    "Send Email Notification",
+    "Generate Report",
+    "User Authentication",
+    "Database Backup",
+    "Optimize Images",
+    "Monitor System Logs",
+    "Run Scheduled Job",
+    "Update Dashboard"
+]
+
+for task in tasks:
+    priority = random.randint(1, 10)
+    heap.push(priority, task)
+    print(f"Added Task: {task} with Priority {priority}")
+
+print("n\Priority Queue (Min-Heap):", heap.heap)
+
+print("\nProcessing Tasks:")
+while not heap.is_empty():
+    priority, task = heap.pop()
+    print(f"Processing Task: {task} (Priority {priority})")
+
+print("n\All tasks completed!")
