@@ -10,16 +10,40 @@ class MinHeap:
         self.heap = []
 
     def heapify_up(self, index):
-        pass
+        """Heapify up is used when inserting a new element"""
+        parent = (index - 1) // 2
+        if index > 0 and self.heap[index] < self.heap[parent]:
+            self.heap[index], self.heap[parent] = self.heap[parent], self.heap[index]
+            self.heapify_up(parent)
 
     def heapify_down(self, index):
-        pass
+        """Heapify down is used when replacing the root with the last element"""
+        left = 2 * index + 1
+        right = 2 * index + 2
+        smallest = index
+
+        if left < len(self.heap) and self.heap[left] < self.heap[smallest]:
+            smallest = left
+        if right < len(self.heap) and self.heap[right] < self.heap[smallest]:
+            smallest = right
+        if smallest != index:
+            self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
+            self.heapify_down(smallest)
 
     def push(self, value):
-        pass
+        """Insert a value into the heap"""
+        self.heap.append(value)
+        self.heapify_up(len(self.heap) - 1)
 
     def pop(self):
-        pass
+        """Remove and return the smallest value"""
+        if len(self.heap) == 1:
+            return self.heap.pop()
+        root = self.heap[0]
+        self.heap[0] = self.heap.pop()
+        self.heapify_down(0)
+        return root
 
     def peek(self):
-        pass
+        """Get the smallest value without removing it"""
+        return self.heap[0] if self.heap else None
