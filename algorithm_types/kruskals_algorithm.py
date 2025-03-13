@@ -45,3 +45,21 @@ def kruskal_algorithm(graph):
 
     return mst
 
+
+edges = {
+    [
+    ('A', 'B', 4), ('A', 'H', 8),
+    ('B', 'H', 11), ('B', 'C', 8),
+    ('H', 'I', 7), ('H', 'G', 1),
+    ('I', 'G', 6), ('I', 'C', 2),
+    ('G', 'F', 2), ('C', 'F', 4),
+    ('C', 'D', 7), ('D', 'F', 14),
+    ('D', 'E', 9), ('F', 'E', 10)
+    ]
+}
+
+mst = kruskal_algorithm(edges)
+
+print("Minimum Spanding Tree (MST) edges:")
+for edge in mst:
+    print(edge)
