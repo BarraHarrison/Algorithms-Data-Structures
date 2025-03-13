@@ -26,5 +26,22 @@ class DisjointSet:
 
 
 def kruskal_algorithm(graph):
-    pass
+    # Sort edges by weight
+    edges = sorted(graph, key=lambda edge: edge[2])
+
+    # Initialize DisjointSet
+    nodes = set()
+    for edge in edges:
+        nodes.update([edge[0], edge[1]])
+
+    ds = DisjointSet(nodes)
+
+    # Add edges while avoiding cycles
+    mst = []
+    for u, v, weight in edges:
+        if ds.find(u) != ds.find(v):
+            ds.union(u, v)
+            mst.append((u, v, weight))
+
+    return mst
 
