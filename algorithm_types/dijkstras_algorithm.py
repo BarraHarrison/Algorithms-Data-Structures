@@ -28,4 +28,16 @@ def dijkstra_algorithm(graph, start):
 
     return shortest_paths
 
+graph = {
+    "A": {"B": 1, "C": 4},
+    "B": {"A": 1, "C": 2, "D": 5},
+    "C": {"A": 4, "B": 2, "D": 1},
+    "D": {"B": 5, "C": 1}
+}
 
+
+# Algorithm runs from node "A"
+shortest_paths = dijkstra_algorithm(graph, "A")
+
+for node, distance in shortest_paths.items():
+    print(f"Shortest path from A to {node}: {distance}")
