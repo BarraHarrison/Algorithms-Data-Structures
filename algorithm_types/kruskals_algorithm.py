@@ -1,5 +1,6 @@
 # Algorithm for finding maximum and minimum spanning trees (MST) in weighted graphs
-# Ensuring no cycles, it finds min. total weight that connects all the nodes in the graph
+# Ensuring no cycles (No Loops!), it finds min. total weight that connects all the nodes in the graph
+# A cycle is just when we you come back to the same node you started on
 
 class DisjointSet:
     def __init__(self, nodes):
@@ -46,8 +47,7 @@ def kruskal_algorithm(graph):
     return mst
 
 
-edges = {
-    [
+edges = [
     ('A', 'B', 4), ('A', 'H', 8),
     ('B', 'H', 11), ('B', 'C', 8),
     ('H', 'I', 7), ('H', 'G', 1),
@@ -56,7 +56,7 @@ edges = {
     ('C', 'D', 7), ('D', 'F', 14),
     ('D', 'E', 9), ('F', 'E', 10)
     ]
-}
+
 
 mst = kruskal_algorithm(edges)
 
