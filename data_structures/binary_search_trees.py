@@ -57,3 +57,15 @@ class BST:
             result.append(node.value)
             self._inorder_recursive(node.right, result)
 
+bst = BST()
+values = [50, 30, 70, 20, 40, 60, 80]
+for val in values:
+    bst.insert(val)
+
+print("BST Inorder Traversal (Sorted Order):", bst.inorder_traversal())
+print("Search 40:", bst.search(40))
+print("Search 100:", bst.search(100))
+
+# BST Inorder Traversal (Sorted Order): [20, 30, 40, 50, 60, 70, 80]
+# Search 40: True
+# Search 100: False
