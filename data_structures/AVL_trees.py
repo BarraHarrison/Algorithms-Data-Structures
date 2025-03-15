@@ -79,12 +79,16 @@ class AVLTree:
         
         return node
 
-    def inorder_traversal(self, node, result=[]):
+    def inorder_traversal(self, node, result=None):
         "Returns a sorted order"
+        if result is None:
+            result = []
+
         if node:
             self.inorder_traversal(node.left, result)
             result.append(node.value)
             self.inorder_traversal(node.right, result)
+
         return result
 
     def insert_value(self, value):
