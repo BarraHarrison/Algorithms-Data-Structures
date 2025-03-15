@@ -90,3 +90,11 @@ class AVLTree:
     def insert_value(self, value):
         """Insert values starting from the root"""
         self.root = self.insert(self.root, value)
+
+
+avl = AVLTree()
+values = [10, 20, 30, 40, 50, 25]
+for val in values:
+    avl.insert_value(val)
+
+print("AVL Tree Inorder Traversal (Sorted Order):", avl.inorder_traversal(avl.root))
