@@ -41,7 +41,7 @@ class AVLTree:
         y = x.right
         T2 = y.left
 
-        y.left = y
+        y.left = x
         x.right = T2
 
         x.height = max(self.get_height(x.left), self.get_height(x.right)) + 1
@@ -56,8 +56,10 @@ class AVLTree:
 
         if value < node.value:
              node.left = self.insert(node.left, value)
-        else:
+        elif value > node.value:
             node.right = self.insert(node.right, value)
+        else:
+            return node
 
         node.height = max(self.get_height(node.left), self.get_height(node.right)) + 1
 
