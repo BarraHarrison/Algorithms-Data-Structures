@@ -104,3 +104,4 @@ for val in values:
     avl.insert_value(val)
 
 print("AVL Tree Inorder Traversal (Sorted Order):", avl.inorder_traversal(avl.root))
+# AVL Tree Inorder Traversal (Sorted Order): [10, 20, 25, 30, 40, 50]
