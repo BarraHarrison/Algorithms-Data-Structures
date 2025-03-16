@@ -61,14 +61,11 @@ class BStarTree:
 
     def insert_non_full(self, node, key):
         """Insert a key into a non-full node"""
-        i = len(node.keys)
+        i = len(node.keys) - 1
 
         if node.leaf:
-            node.keys.append(0)
-            while i >= 0 and key < node.keys[i]:
-                node.keys[i + 1] = node.keys[i]
-                i -= 1
-            node.keys[i + 1] = key
+            node.keys.append(key)
+            node.keys.sort()
         else:
             while i >= 0 and key < node.keys[i]:
                 i -= 1
