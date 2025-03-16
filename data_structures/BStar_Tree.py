@@ -26,7 +26,7 @@ class BStarTree:
             print(node.keys[i], end=" ")
 
         if not node.leaf:
-            self.traverse(node.children[len[node.keys]])
+            self.traverse(node.children[len(node.keys)])
 
 
 
