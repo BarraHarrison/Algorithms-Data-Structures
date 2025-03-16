@@ -114,3 +114,9 @@ if result:
     print(f"Key {key_to_search} found in the B*-Tree")
 else:
     print(f"Key {key_to_search} not found in the B*-Tree")
+
+
+# B*-Tree Inorder Traversal (Sorted Order):
+# 5 6 10 12 20 
+
+# Key 25 not found in the B*-Tree
