@@ -88,4 +88,25 @@ class BTree:
         new_child.keys = full_child.keys[t:(2 * t)]
         full_child.children = full_child.children[0:t]
 
+# B-Tree of order 2
+B = BTree(t=2)
+values = [10, 20, 5, 6, 12, 30, 7, 17]
 
+for v in values:
+    B.insert(v)
+
+print("B-Tree Inorder Traversal (Sorted Order):")
+B.traverse()
+print("\n")
+
+key_to_search = 12
+result = B.search(key_to_search)
+if result:
+    print(f"Key {key_to_search} found in the B-Tree")
+else:
+    print(f"Key {key_to_search}")
+
+# B-Tree Inorder Traversal (Sorted Order):
+# 5 6 7 10 20 10 20 10 12 17 20 30 20 30 
+
+# Key 12 found in the B-Tree
