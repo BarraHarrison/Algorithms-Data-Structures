@@ -98,3 +98,22 @@ class BStarTree:
             full_child.children = full_child.children[:-redistribute_count]
 
 
+
+
+# B*-Tree of order 3
+BStar = BStarTree(t=3)
+values = [10, 20, 5, 6, 12, 30, 7, 17, 25, 40, 50, 60]
+
+for v in values:
+    BStar.insert(v)
+
+print("B*-Tree Inorder Traversal (Sorted Order):")
+BStar.traverse()
+print("\n")
+
+key_to_search = 25
+result = BStar.search(key_to_search)
+if result:
+    print(f"Key {key_to_search} found in the B*-Tree")
+else:
+    print(f"Key {key_to_search} not found in the B*-Tree")
