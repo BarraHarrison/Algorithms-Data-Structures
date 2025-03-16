@@ -64,7 +64,7 @@ class BStarTree:
         i = len(node.keys)
 
         if node.leaf:
-            node.keys.append(None)
+            node.keys.append(0)
             while i >= 0 and key < node.keys[i]:
                 node.keys[i + 1] = node.keys[i]
                 i -= 1
