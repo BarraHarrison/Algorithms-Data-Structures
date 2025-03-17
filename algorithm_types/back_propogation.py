@@ -27,3 +27,19 @@ y = np.array([
     [1],
     [0]
 ])
+
+# Initialize neural network parameters
+np.random.seed(42)
+input_neurons = 2
+hidden_neurons = 2
+output_neurons = 1
+
+# Initialize the weights and biases
+weights_input_hidden = np.random.uniform(size=(input_neurons, hidden_neurons))
+weights_hidden_output = np.random.uniform(size=(hidden_neurons, output_neurons))
+bias_hidden = np.random.uniform(size=(1, hidden_neurons))
+bias_output = np.random.uniform(size=(1, output_neurons))
+
+# Training Parameters
+learning_rate = 0.5
+epochs = 10000
