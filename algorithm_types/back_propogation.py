@@ -75,3 +75,8 @@ for i in range(len(X)):
     final_input = np.dot(hidden_output, weights_hidden_output) + bias_output
     final_output = sigmoid(final_input)
     print(f"Input: {X[i]}, Predicted Output: {final_output.item():.3f}")
+
+# Input: [0 0], Predicted Output: 0.647
+# Input: [0 1], Predicted Output: 0.647
+# Input: [1 0], Predicted Output: 0.647
+# Input: [1 1], Predicted Output: 0.646
