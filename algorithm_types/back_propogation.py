@@ -68,3 +68,10 @@ for epoch in range(epochs):
         print(f"Epoch {epoch}, Loss: {loss:.5f}")
 
 
+print("\nTrained Neural Network Predictions:")
+for i in range(len(X)):
+    hidden_input = np.dot(X[i], weights_input_hidden) + bias_hidden
+    hidden_output = sigmoid(hidden_input)
+    final_input = np.dot(hidden_output, weights_hidden_output) + bias_output
+    final_output = sigmoid(final_input)
+    print(f"Input: {X[i]}, Predicted Output: {final_output[0]:.3f}")
